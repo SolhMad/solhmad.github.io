@@ -109,7 +109,7 @@
                         <div class="card p-3 containers-border-1 shadow">
                             <div class="card-body">
                                 <p class="card-text text-center text-justify">"👋 Hello, my name is Ahmad Soleh, but my
-                                    friends call me Soleh. I'm an 18-year-old IT Enthusiast with a deep love
+                                    friends call me Soleh. I'm an <p id="umur"></p>-year-old IT Enthusiast with a deep love
                                     for Proggramming 💙—just like I love my girlfriend 😍. I enjoy creating interactive
                                     web experiences with CSS animations and
                                     transitions 🎨✨. I also have a background in graphic design and web development 💻.
@@ -448,6 +448,30 @@
 
     <!-- My own script -->
     <script src="js/script.js"></script>
+    <!-- umur aing -->
+    <script>
+        // TANGGAL LAHIR (YYYY, MM-1, DD)
+const tanggalLahir = new Date(2006, 6, 12); 
+// ingat: bulan dimulai dari 0 (Juni = 6)
+
+const hariIni = new Date();
+
+let umur = hariIni.getFullYear() - tanggalLahir.getFullYear();
+
+// cek apakah ulang tahun tahun ini sudah lewat atau belum
+const sudahUltah =
+  hariIni.getMonth() > tanggalLahir.getMonth() ||
+  (hariIni.getMonth() === tanggalLahir.getMonth() &&
+   hariIni.getDate() >= tanggalLahir.getDate());
+
+if (!sudahUltah) {
+  umur--;
+}
+
+document.getElementById("umur").innerText =
+  `${umur}`;
+
+    </script>
 </body>
 
 </html>
